@@ -1,0 +1,66 @@
+@import "../../../../core/style/App.scss";
+
+.site-footer {
+  padding: 48px 0 38px 0;
+  border-top: solid 2px #d9d9d9;
+  font-weight: fw(medium);
+  &__grid {
+    display: flex;
+    margin-bottom: 48px;
+    &__item {
+      width: 25%;
+    }
+  }
+  &__title {
+    margin-bottom: 48px;
+    font-size: fz(24);
+  }
+  &__desc {
+    color: color(grey, 2);
+  }
+  &__title-small {
+    color: color(grey, 2);
+    margin-bottom: 55px;
+  }
+  &__inner {
+    padding-left: 92px;
+  }
+  &__nav {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+    font-weight: fw(medium);
+    &__item {
+      margin-bottom: 46px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    &__link {
+      text-decoration: none;
+    }
+  }
+  &__form {
+    padding-left: 8px;
+    &__input {
+      border: 0;
+      border-bottom: 1px solid #000;
+      @include font-size(14);
+      width: 200px;
+      margin-right: 8px;
+    }
+  }
+  .btn--subs {
+    text-decoration: none;
+    background: none;
+    border: 0;
+    border-bottom: solid 1px #000;
+    @include font-size(14);
+    font-weight: fw(semi-bold);
+    text-transform: uppercase;
+  }
+  &__copyright {
+    border-top: solid 1px #d9d9d9;
+    padding-top: 32px;
+  }
+}

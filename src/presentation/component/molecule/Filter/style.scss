@@ -1,0 +1,116 @@
+@import "../../../../core/style/App.scss";
+
+.filter {
+  padding: 32px 0;
+  background-color: color(secondary);
+  &__wrapper {
+    @include clearfix;
+  }
+
+  // form-left
+  &__form-left {
+    float: left;
+    width: 50%;
+    position: relative;
+  }
+  &__box {
+    font-size: 0;
+  }
+  &__form {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 32px;
+    .btn--icons {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 6px;
+    }
+    span {
+      display: inline-block;
+      vertical-align: middle;
+      @include font-size(18);
+      font-weight: fw(medium);
+    }
+  }
+  &__fs-left {
+    position: absolute;
+    left: 0;
+    top: 40px;
+    outline: 0;
+    border: solid 1px color(primary);
+    padding: 8px 10px;
+    @include font-size(16);
+    @include radius(1);
+    scroll-behavior: smooth;
+    background-color: color(primary);
+    color: color(white);
+    transform: scaleY(0%);
+    transform-origin: center top;
+    & option {
+      outline: 0;
+      border: 0;
+      margin-bottom: 8px;
+      background-color: color(primary);
+      padding-bottom: 16px;
+      @include font-size(16);
+    }
+  }
+  &__btn-left {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 32px;
+  }
+  &__txt {
+    display: inline-block;
+    vertical-align: middle;
+    @include font-size(16);
+    font-weight: fw(medium);
+    padding-left: 32px;
+    border-left: solid 2px color(grey,2);
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  // form-right
+  &__form-right {
+    float: right;
+    width: 50%;
+    text-align: right;
+  }
+  &__resault-display {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 32px;
+    @include font-size(16);
+    span {
+      @include font-size(16);
+      font-weight: fw(medium);
+      margin-right: 16px;
+    }
+    input {
+      border: 0;
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      color: color(grey, 2);
+      border-radius: 2px;
+    }
+  }
+  &__short {
+    display: inline-block;
+    vertical-align: middle;
+    @include font-size(16);
+    span {
+      margin-right: 8px;
+    }
+    select {
+      border: 0;
+      outline: 0;
+      padding: 12px 0 12px 20px;
+      color: color(grey,2);
+      @include font-size(18);
+      @include radius(1);
+    }
+  }
+}

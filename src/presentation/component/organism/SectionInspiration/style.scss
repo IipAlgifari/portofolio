@@ -1,0 +1,138 @@
+@import "../../../../core/style/App.scss";
+
+.inspirations {
+  $i: &;
+  height: 670px;
+  position: relative;
+  &__fullhalf {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(50% - 620px);
+    right: 0;
+    padding-top: 52px;
+    padding-bottom: 44px;
+    display: flex;
+    align-items: center;
+  }
+  &__text {
+    flex-basis: 462px;
+    padding-right: 42px;
+  }
+  &__slider {
+    flex: 1;
+    overflow: hidden;
+  }
+  &__title {
+    @include font-size(40);
+    color: color(hyfen);
+    margin-bottom: 8px;
+  }
+  &__desc {
+    @include font-size(16);
+    color: color(grey, 6);
+    margin-bottom: 24px;
+  }
+
+  .btn-inspiration {
+    background-color: color(primary);
+    color: color(white);
+  }
+
+  &__box {
+    width: 428px;
+  }
+
+  #{$i}__item {
+    // height: 582px;
+    // transition: height 0.5s ease;
+    transform: none;
+    transform-origin: center top;
+    transition: transform 0.35s ease;
+  }
+
+  #{$i}__content {
+    opacity: 0.7;
+    transition: all 0.4s ease;
+    &:hover {
+      opacity: 0.86;
+    }
+  }
+
+  .slick-slide {
+    padding-right: 24px;
+    &.slick-active {
+      ~ .slick-slide {
+        #{$i}__item {
+          transform: scaleY(0.83);
+          // height: 486px;
+        }
+        #{$i}__content {
+          opacity: 0;
+          // height: 486px;
+        }
+      }
+    }
+    img {
+      /* border: 2.5px solid white; */
+      border: 0;
+    }
+  }
+  .slick-dots {
+    bottom: 72px !important;
+    left: 428px;
+    z-index: 3;
+    text-align: left;
+    li.slick-active button {
+      height: 24px;
+      width: 24px;
+      transition: all 0.4s ease;
+    }
+    li button:before {
+      font-size: 12px;
+      line-height: 27px;
+      color: #d8d8d8;
+      left: 0;
+      top: 50%;
+      transition: all 0.4s ease;
+    }
+    li.slick-active button:before {
+      opacity: 0.8;
+      color: color(primary);
+      height: 27px;
+      width: 27px;
+      border: 1px solid color(primary);
+      border-radius: 50%;
+      font-size: 12px;
+      line-height: 27px;
+      transition: all 0.4s ease;
+      top: 50%;
+    }
+  }
+  .slick-next {
+    z-index: 3;
+    height: 48px;
+    width: 48px;
+    background-color: color(white);
+    border-radius: 50%;
+    right: -425px;
+    opacity: 0.5;
+    transition: all 0.4s ease;
+    &:hover {
+      box-shadow: 0px 1px 8px 0.5px rgba(12, 12, 12, 0.2);
+    }
+    &::before {
+      padding: 2px;
+      font-size: 42px;
+      line-height: 42px;
+      background-color: transparent;
+      position: absolute;
+      left: 50%;
+      top: 4.5px;
+      transform: translateX(-50%);
+      border-radius: 50%;
+      color: color(primary);
+      opacity: 1;
+    }
+  }
+}

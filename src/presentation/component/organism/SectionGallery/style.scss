@@ -1,0 +1,16 @@
+@import "../../../../core/style/App.scss";
+
+.gallery {
+    padding: 72px 0;
+  &__txt {
+    text-align: center;
+  }
+  &__desc {
+    @include font-size(20);
+    font-weight: fw(medium);
+    margin-bottom: 8px;
+  }
+  &__title {
+    @include font-size(40);
+  }
+}

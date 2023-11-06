@@ -1,0 +1,41 @@
+/* ==========================================================================
+   Variable: Colors
+   ========================================================================== */
+
+// colors
+$colors: (
+  primary: #B88E2F,
+  link: #b28c35,
+  secondary: #FFF3E3,
+  tertiary: #4089ed,
+  black: #000,
+  hyfen: #3a3a3a,
+  orange: #fcf8f3,
+  grey: (
+    0: #888,
+    1: #fcfcfc,
+    2: #9f9f9f,
+    3: #333333,
+    4: #F4F5F7,
+    5: #898989,
+    6: #616161,
+    7: #313131,
+    8: #242424,
+    9: #898989
+  ),
+  white: #fff,
+  bg: #fff,
+  overlay: rgba(#000, 0.7),
+  rgba: rgba(255, 255, 255, 0.85),
+  linear-gradient: linear-gradient(183.41deg, #67c3f3 -8.57%, #5a98f2 82.96%),
+  shadow: 10px 40px 50px rgba(229, 233, 246, 0.4),
+  shadow-hover: rgba(#000, 0.2),
+  social-media: (
+    facebook: #1877f2,
+    twitter: #1da1f2,
+    instagram: #405de6,
+    whatsapp: #25d366,
+    youtube: #ff0000,
+    spotify: #1db954,
+  ),
+);

@@ -1,0 +1,20 @@
+// @import "../../molecule/Banner/style.scss";
+@import "../../../../core/style/App.scss";
+
+.hero-banner {
+//   padding-top: 108px;
+  height: 700px;
+  &__img {
+    height: 100%;
+    overflow: hidden;
+    &__el {
+      display: block;
+      object-fit: cover;
+      height: 700px;
+      width: 100%;
+    }
+  }
+  .container {
+    position: relative;
+  }
+}

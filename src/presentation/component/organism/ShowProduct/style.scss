@@ -1,0 +1,56 @@
+@import "../../../component/molecule/ProductCard/style.scss";
+
+.show-product {
+  padding: 42px 0;
+  overflow: hidden;
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+    justify-content: space-between;
+    row-gap: 24px;
+
+  }
+  .btn-subaction {
+    background-color: transparent;
+    color: color(white);
+    border: 0;
+    outline: none;
+    padding: 0;
+    height: 24px;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding-left: 28px;
+    margin-bottom: 8px;
+    span {
+      margin-left: 8px;
+    }
+    &:hover {
+      color: color(primary);
+    }
+    &:last-child {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__btn {
+    text-align: center;
+    button {
+      outline: 0;
+      border: 0;
+      width: 60px;
+      height: 60px;
+      background-color: color(secondary);
+      color: color(black);
+      margin-right: 38px;
+      border-radius: 10px;
+      transition: all .4s ease;
+    }
+    .active {
+      background-color: color(primary);
+      color: color(black);
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@import "../../../../core/style/App.scss";
+
+.section-browse {
+    padding: 56px 0;
+    &__gallery {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__txt {
+        margin-bottom: 58px;
+        text-align: center;
+    }
+    &__title {
+        margin-bottom: 8px;
+        @include font-size(32);
+    }
+    &__desc {
+        margin: 0;
+        @include font-size(18);
+    }
+}

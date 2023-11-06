@@ -1,0 +1,206 @@
+// Core
+@import "../../../../core/style/App.scss";
+
+.product {
+  &__card {
+    position: relative;
+    height: 350px;
+    width: 188px;
+    background-color: color(grey, 4);
+    border-radius: 6px;
+    transition: all 0.4s ease;
+    .wrapper-link {
+      position: absolute;
+      left: 0;
+      top: 0;
+      text-decoration: none;
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+      display: block;
+      background-color: transparent;
+    }
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0px 1px 4px 0.5px rgba(12, 12, 12, 0.2);
+      .product__img__el {
+        scale: 1.03;
+      }
+    }
+  }
+  &__card {
+    position: relative;
+    height: 350px;
+    width: 188px;
+    background-color: color(grey, 4);
+    border-radius: 6px;
+    transition: all 0.4s ease;
+    .wrapper-link {
+      position: absolute;
+      left: 0;
+      top: 0;
+      text-decoration: none;
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+      display: block;
+      background-color: transparent;
+    }
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0px 1px 4px 0.5px rgba(12, 12, 12, 0.2);
+      .product__img__el {
+        scale: 1.03;
+      }
+    }
+  }
+
+  // -- card-img
+  &__img {
+    overflow: hidden;
+    border-radius: 6px 6px 0 0;
+    &__box {
+      border-radius: 4px 4px 0 0;
+      width: 100%;
+      height: 188px;
+      overflow: hidden;
+    }
+    &__el {
+      display: block;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center center;
+      transition: all 0.4s ease;
+    }
+  }
+  &__label {
+    background-color: #e97171;
+    opacity: 0.8;
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    padding: 8px 0;
+    span {
+      @include font-size(14);
+      color: color(white);
+    }
+  }
+
+  // -- card-txt
+  &__text {
+    padding: 8px 12px 32px 12px;
+    position: relative;
+  }
+  &__name {
+    @include font-size(18);
+    font-weight: fw(medium);
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  &__desc {
+    @include font-size(14);
+    color: color(grey, 5);
+    margin-bottom: 0;
+  }
+  &__price {
+    display: flex;
+    gap: 16px;
+    justify-content: baseline;
+    width: 100%;
+    position: absolute;
+    left: 16px;
+    bottom: 32px;
+    margin-right: 8px;
+    &__fix {
+      @include font-size(16);
+      font-weight: fw(medium);
+      color: #e97171;
+      margin-bottom: 0;
+    }
+    &__str-price {
+      font-size: 12px;
+      line-height: 24px;
+      color: color(primary);
+      margin-bottom: 0;
+    }
+  }
+  &__dots {
+    position: absolute;
+    right: 2px;
+    bottom: 2px;
+    border-radius: 50%;
+    z-index: 4;
+  }
+
+  // -- popup
+  &__btn {
+    text-align: center;
+  }
+  &__popup {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(8, 9, 15, 0.8);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    @include radius(1);
+    &.active {
+      opacity: 1;
+      z-index: 5;
+      visibility: visible;
+    }
+    &.inactive {
+      opacity: 0;
+    }
+    &__box {
+      text-align: center;
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      vertical-align: middle;
+      transition-delay: 0.6s;
+    }
+    &__btn {
+      margin-bottom: 32px;
+    }
+    .btn-close {
+      color: color(secondary);
+      &:hover {
+        color: color(primary);
+      }
+    }
+  }
+  .btn-subaction {
+    background-color: transparent;
+    color: color(white);
+    border: 0;
+    outline: none;
+    padding: 0;
+    height: 24px;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding-left: 28px;
+    margin-bottom: 8px;
+    span {
+      margin-left: 8px;
+    }
+    &:hover {
+      color: color(primary);
+    }
+    &:last-child {
+      margin-bottom: 8px;
+    }
+  }
+}
