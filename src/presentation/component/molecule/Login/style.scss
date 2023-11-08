@@ -1,0 +1,29 @@
+@import "../../../../core/style/App.scss";
+
+.my-account {
+  .label-checkbox {
+    position: relative;
+    padding-left: 52px;
+    line-height: 28px;
+  }
+
+  .error-message {
+    color: red;
+    font-size: 14px;
+  }
+
+  .btn-login {
+    border-radius: 12px;
+    margin-right: 32px;
+  }
+
+  .link-lost-password {
+    text-decoration: none;
+    font-weight: fw(light);
+    &:hover {
+      color: color(primary);
+    }
+  }
+}
+
+

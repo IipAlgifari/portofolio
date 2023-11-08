@@ -4,7 +4,7 @@ import About from "presentation/container/page/About";
 import Contact from "presentation/container/page/Contact";
 import Blog from "presentation/container/page/Blog";
 import DetailProduct from "presentation/container/page/DetailProduct";
-import Login from "presentation/container/page/Login";
+import MyAccount from "presentation/container/page/MyAccount";
 
 const routeConfig = [
   {
@@ -33,8 +33,8 @@ const routeConfig = [
     element: <DetailProduct />,
   },
   {
-    path: "/login",
-    element: <Login />,
+    path: "/my-account",
+    element: <MyAccount />,
   },
 ];
 

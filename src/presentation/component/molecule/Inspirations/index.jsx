@@ -5,7 +5,6 @@ import { useEffect } from "react";
 import dataInspirations from "../../organism/SectionInspiration/dataInspirations";
 
 // ---vendor
-
 import { FaArrowRightLong } from "react-icons/fa6";
 // -- react slick
 import "slick-carousel/slick/slick.css";
@@ -27,7 +26,6 @@ const Inspirations = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoPlay: true,
-    // foucusOnSelect: true,
   };
 
   // --- onScroll

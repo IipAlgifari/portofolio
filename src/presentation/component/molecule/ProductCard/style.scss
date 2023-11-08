@@ -75,7 +75,6 @@
     }
   }
   &__label {
-    background-color: #e97171;
     opacity: 0.8;
     position: absolute;
     right: 16px;
@@ -85,10 +84,19 @@
     border-radius: 50%;
     text-align: center;
     padding: 8px 0;
-    span {
-      @include font-size(14);
-      color: color(white);
-    }
+  }
+
+  &__label span {
+    font-size: 14px;
+    color: white;
+  }
+
+  &__label.discount {
+    background-color: #e97171;
+  }
+
+  &__label.new {
+    background-color: green;
   }
 
   // -- card-txt

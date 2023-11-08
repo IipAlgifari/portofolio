@@ -1,5 +1,3 @@
-// Based on https://dev.to/yezyilomo/global-state-management-in-react-with-global-variables-and-hooks-state-management-doesn-t-have-to-be-so-hard-2n2c
-// Credit also goes to my mate Fülöp.
 
 // 1. Create singletons via createGlobalState()
 // ##################################
@@ -55,8 +53,10 @@ function createGlobalState(initState = null) {
       return this;
     },
 
-    delete(state) {
-      console.log(state)
+    delete(itemId) {
+      console.log(itemId);
+      this.data.state = this.data.state.filter((item) => item.id !== itemId.id);
+      this.data.reRenderFns.forEach((reRender) => reRender());
       // Logic untuk menghapus 1 state
 
       // Filter data ada atau tidak

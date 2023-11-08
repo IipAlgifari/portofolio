@@ -10,14 +10,13 @@ import Button from "presentation/component/atom/Button";
 import List from "./listSearch";
 import useGlobalState, { stateCart } from "core/state/cart";
 
-// style
-import "./style.scss";
-
 // icons
 import { BiSearch } from "react-icons/bi";
 import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
 import { MdClose } from "react-icons/md";
 import { BsPersonExclamation, BsTrash } from "react-icons/bs";
+// style
+import "./style.scss";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -28,22 +27,10 @@ const Header = () => {
   const [cart] = useGlobalState(stateCart);
   let totalPrice = 0;
 
-  const queryHandler = (e) => {
-    //convert input text to lower case
-    let lowerCase = e.target.value;
-    setQuery(lowerCase);
-  };
-
-  cart.map((item) => {
-    totalPrice = (FormatRupiah(item.price * item.qty));
-    return item;
-  });
-
-  // --handleScroll
+  // --handleScrollHeader
   useEffect(() => {
     const handleScroll = () => {
       let moving = window.pageYOffset;
-
       setVisible(position > moving);
       setPosition(moving);
     };
@@ -54,7 +41,7 @@ const Header = () => {
   });
   const cls = visible ? "visible" : "hidden";
 
-  // handlerClickSearch
+  // --handlerClickSearch
   useEffect(() => {
     let handleOpenSearch = (e) => {
       if (e.target) {
@@ -63,16 +50,27 @@ const Header = () => {
     };
     document.addEventListener("mousdown", handleOpenSearch);
   });
-
   const handleSearchClose = (e) => {
     e.preventDefault();
     setOpen(false);
   };
+  //-- handleQuerySearch
+  const queryHandler = (e) => {
+    let lowerCase = e.target.value.toLowerCase();
+    setQuery(lowerCase);
+  };
 
-
-  // Cart-hover
   const chartStyles = {
     opacity: `${openChart}`,
+  };
+  //-- total-price-cart
+  cart.map((item) => {
+    totalPrice = FormatRupiah(item.price * item.qty);
+    return item;
+  });
+  // -- deleteItemCart
+  const handleDeleteItem = (itemIdToDelete) => {
+    stateCart.delete({ id: itemIdToDelete });
   };
 
   return (
@@ -85,6 +83,8 @@ const Header = () => {
             </Link>
             <h2 className="header__title">Furniro</h2>
           </div>
+
+          {/* header menu */}
           <div className={`header__menu ${open ? "active" : "inactive"}`}>
             <ul className="header__menu__list">
               <li className="header__menu__item">
@@ -109,10 +109,12 @@ const Header = () => {
               </li>
             </ul>
           </div>
+
+          {/* header nav */}
           <div className={`header__nav ${open ? "active" : "inactive"}`}>
             <ul className="header__nav__list">
               <li className="header__nav__item">
-                <Link to="/login" type="link" className="btn btn--icons nav-link">
+                <Link to="/my-account" type="link" className="btn btn--icons nav-link">
                   <BsPersonExclamation />
                 </Link>
               </li>
@@ -210,7 +212,7 @@ const Header = () => {
                           </div>
                         </div>
                       </div>
-                      <Button variant="icons trash">
+                      <Button variant="icons trash" onClick={() => handleDeleteItem(val.id)}>
                         <BsTrash />
                       </Button>
                     </div>

@@ -7,7 +7,7 @@ import { FaRegHeart } from "react-icons/fa";
 import { BsArrowLeftRight, BsShareFill, BsThreeDots } from "react-icons/bs";
 import { MdClose } from "react-icons/md";
 
-// utils 
+// utils
 import formatRupiah from "core/util/FormatRupiah/formatRupiah";
 
 // component
@@ -16,8 +16,8 @@ import Button from "../../atom/Button/";
 // style
 import "./style.scss";
 
-const ProductCard = ({ item, handleClickItem}) => {
-  const { name, description, image, price, label, startingprice } = item;
+const ProductCard = ({ item, handleClickItem }) => {
+  const { name, description, image, price, isDiscount, discount, isNew, isOld, startingprice } = item;
   const [isOpen, setIsOpen] = useState(false);
 
   //-- handleProduct
@@ -46,8 +46,14 @@ const ProductCard = ({ item, handleClickItem}) => {
             <img src={image} alt={name} className="product__img__el" />
           </div>
         </div>
-        <div className="product__label">
-          <span>{label}</span>
+        <div className="product__label discount">
+          {isDiscount && <span className="product-label discount-label">{discount + "%"}</span>}
+        </div>
+        <div className="product__label new">
+          {isNew && <span className="product-label new-product-label">New</span>}
+        </div>
+        <div className="product__label ol">
+          {isOld && <span className="product-label old-product-label">old</span>}
         </div>
         <div className="product__text">
           <h5 className="product__name">{name}</h5>

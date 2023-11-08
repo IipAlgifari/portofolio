@@ -1,0 +1,10 @@
+@import "../../../../core/style/App.scss";
+
+.my-account {
+  &__desc {
+      margin-bottom: 64px;
+  }
+  .btn-register {
+    border-radius: 12px;
+  }
+}
