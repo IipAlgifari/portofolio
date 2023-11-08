@@ -1,0 +1,26 @@
+@import "../../../../core/style/App.scss";
+
+.contact {
+  background-color: lightblue;
+  padding: 92px 0 64px 0;
+
+  &__head {
+    margin-bottom: 14px;
+    text-align: center;
+  }
+  &__title {
+    @include font-size(36);
+    margin-bottom: 8px;
+    font-weight: fw(semi-bold);
+  }
+  &__description {
+    color: color(grey, 2);
+    width: 644px;
+    margin: 0 auto;
+  }
+
+  &__body {
+    padding-top: 114px;
+    display: flex;
+  }
+}

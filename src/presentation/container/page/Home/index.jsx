@@ -9,7 +9,6 @@ import SectionProduct from "presentation/component/organism/SectionProduct";
 import SectionInspirations from "presentation/component/organism/SectionInspiration";
 import SectionGallery from "presentation/component/organism/SectionGallery";
 import SectionFeature from "presentation/component/organism/SectionFeature";
-import Filter from "presentation/component/molecule/Filter";
 
 const Home = () => {
   return (
@@ -20,7 +19,6 @@ const Home = () => {
       <SectionInspirations title="50+ Beautiful rooms inspiration" description="Our designer already made a lot of beautiful prototipe of rooms that inspire you" />
       <SectionGallery/>
       <SectionFeature/>
-      <Filter judul="INI JUDUL" desc="INI DESC"/>
     </Default>
   );
 };
