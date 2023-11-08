@@ -71,11 +71,11 @@ const Login = () => {
     <div className="my-account__inner">
       <div className="my-account__login">
         <div className="my-account__box">
-          <h2 className="my-account__title">Log In</h2>
+          <h2 className="my-account__title">Login</h2>
           <form action="/" className="my-account__form f-login">
             <div className="my-account__form-grup">
               <label htmlFor="femail">Username or Email address</label>
-              <Input autoFocus="true" autoComplete="off" id="femail" type="email" name="email" value={formData.email} onChange={handleChange} variant="primary" />
+              <Input autoFocus="true" autoComplete="off" id="femail" type="email" name="email" value={formData.email} onChange={handleChange} variant="secondary" />
               {emailError && <div className="error-message">{emailError}</div> }
             </div>
             <div className="my-account__form-grup">
