@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 // core-globalState
 import useGlobalState, { stateCart } from "core/state/cart";
 
-
 // data
 import dbProduct from "./dbProduct";
 
@@ -13,12 +12,17 @@ import ProductCard from "presentation/component/molecule/ProductCard";
 // style
 import "./style.scss";
 
+// global state
+import useCart from "core/state/useCart";
+
 const ShowProduct = () => {
   const [, setCart] = useGlobalState(stateCart);
   const productPerPage = 18;
   const [activePg, setActivePg] = useState(1);
   const [pages, setPages] = useState([]);
   const [displayProduct, setDisplayProduct] = useState([]);
+
+  const { items: listCart, add: addCart } = useCart();
 
   useEffect(() => {
     const pagesTemp = [];
@@ -43,8 +47,9 @@ const ShowProduct = () => {
 
   // -- handleClick-item
   const handleClickItem = (item) => {
-    setCart(item);
-  }
+    // setCart(item);
+    addCart(item);
+  };
 
   return (
     <div className="show-product">

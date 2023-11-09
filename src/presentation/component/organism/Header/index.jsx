@@ -15,8 +15,12 @@ import { BiSearch } from "react-icons/bi";
 import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
 import { MdClose } from "react-icons/md";
 import { BsPersonExclamation, BsTrash } from "react-icons/bs";
+
 // style
 import "./style.scss";
+
+// global state
+import useCart from "core/state/useCart";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -26,6 +30,8 @@ const Header = () => {
   const [query, setQuery] = useState("");
   const [cart] = useGlobalState(stateCart);
   let totalPrice = 0;
+
+  const { items: listCart } = useCart();
 
   // --handleScrollHeader
   useEffect(() => {
@@ -138,7 +144,7 @@ const Header = () => {
               <li className="header__nav__item">
                 <Link type="link" to="/detail-product" className="btn btn--icons nav-link" onMouseEnter={() => setOpenChart("1")}>
                   <AiOutlineShoppingCart />
-                  <span>{cart?.length > 0 ? cart?.length : 0}</span>
+                  <span>{listCart?.length > 0 ? listCart?.length : 0}</span>
                 </Link>
               </li>
             </ul>
@@ -195,7 +201,7 @@ const Header = () => {
             </Link>
             <div className="header__cart__list">
               <div>
-                {cart.map((val) => {
+                {listCart.map((val) => {
                   return (
                     <div className="header__cart__item" key={val.id}>
                       <div className="header__cart__product">

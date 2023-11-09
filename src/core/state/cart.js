@@ -57,13 +57,6 @@ function createGlobalState(initState = null) {
       console.log(itemId);
       this.data.state = this.data.state.filter((item) => item.id !== itemId.id);
       this.data.reRenderFns.forEach((reRender) => reRender());
-      // Logic untuk menghapus 1 state
-
-      // Filter data ada atau tidak
-
-      // jika ada maka lakukan delete
-
-      // Jika tidak do nothing
     },
 
     joinReRender(reRender) {
