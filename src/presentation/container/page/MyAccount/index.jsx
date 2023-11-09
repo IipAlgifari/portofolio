@@ -10,8 +10,7 @@ import SectionFeature from "presentation/component/organism/SectionFeature";
 const MyAccount = () => {
   return (
     <Default>
-      <SectionBanner logo="asset/images/logo/logo-furniture.svg" img="asset/images/banner/section-banner.jpg" title="My Accou
-      nt" navprev="Home" nav="My Account" />
+      <SectionBanner logo="asset/images/logo/logo-furniture.svg" img="asset/images/banner/section-banner.jpg" title="My Account" navprev="Home" nav="My Account" />
       <SectionMyAccount />
       <SectionFeature />
     </Default>
