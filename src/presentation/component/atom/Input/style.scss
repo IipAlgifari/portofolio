@@ -15,6 +15,20 @@
 
 .i--secondary {
   width: 452px;
+  &:focus {
+    border-color: color(secondary);
+  }
+}
+
+.i--count {
+  width: 30px;
+  height: 30px;
+  border: 0;
+  border-radius: 0;
+  padding: 2px;
+  font-size: 13px;
+  line-height: 14px;
+  text-align: center;
 }
 
 .i--checkbox {

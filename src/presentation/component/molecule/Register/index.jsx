@@ -1,6 +1,9 @@
+import React, {useEffect, useState} from "react";
 import Button from "presentation/component/atom/Button";
 import Input from "presentation/component/atom/Input";
-import React, { useState } from "react";
+// -- onScroll
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 // style
 import "./style.scss";
@@ -28,9 +31,14 @@ const Register = () => {
     }
   };
 
+    // -- onScroll
+    useEffect(() => {
+      Aos.init();
+    }, []);
+
   return (
     <div className="my-account__inner">
-      <div className="my-account__register">
+      <div className="my-account__register" data-aos="fade-right" data-aos-duration="2000">
         <h2 className="my-account__title">Register</h2>
         <form onSubmit={handleSubmit} className="my-account__form f-register">
           <div className="my-account__box">

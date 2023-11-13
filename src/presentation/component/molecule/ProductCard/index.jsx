@@ -22,12 +22,12 @@ const ProductCard = ({ item, handleClickItem }) => {
 
   //-- handleProduct
   useEffect(() => {
-    let handleOpenPopup = (e) => {
-      if (e.target) {
-        setIsOpen(false);
-      }
-    };
-    document.addEventListener("mousdown", handleOpenPopup);
+    // let handleOpenPopup = (e) => {
+    //   if (e.target) {
+    //     setIsOpen(false);
+    //   }
+    // };
+    // document.addEventListener("mousedown", handleOpenPopup);
   });
 
   const handleClosePopup = (e) => {
@@ -46,15 +46,9 @@ const ProductCard = ({ item, handleClickItem }) => {
             <img src={image} alt={name} className="product__img__el" />
           </div>
         </div>
-        <div className="product__label discount">
-          {isDiscount && <span className="product-label discount-label">{discount + "%"}</span>}
-        </div>
-        <div className="product__label new">
-          {isNew && <span className="product-label new-product-label">New</span>}
-        </div>
-        <div className="product__label ol">
-          {isOld && <span className="product-label old-product-label">old</span>}
-        </div>
+        {isDiscount && <div className="product__label__discount">{discount + "%"}</div>}
+        {isNew && <div className="product__label__new">New</div>}
+        {isOld && <div className="product__label__old">Old</div>}
         <div className="product__text">
           <h5 className="product__name">{name}</h5>
           <p className="product__desc">{description}</p>
@@ -82,7 +76,13 @@ const ProductCard = ({ item, handleClickItem }) => {
           </Button>
           <div className="product__popup__box">
             <div className="product__popup__btn">
-              <Button variant="add-to-cart" onClick={() => handleClickItem(item)}>
+              <Button
+                variant="add-to-cart"
+                onClick={() => {
+                  setIsOpen(false);
+                  return handleClickItem(item);
+                }}
+              >
                 Add to cart
               </Button>
             </div>

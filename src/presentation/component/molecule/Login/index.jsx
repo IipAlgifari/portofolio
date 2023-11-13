@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "presentation/component/atom/Button";
 import Input from "presentation/component/atom/Input";
+// -- onScroll
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 // style
 import "./style.scss";
@@ -67,13 +70,17 @@ const Login = () => {
     }
   }, []);
 
+  // -- onScroll
+  useEffect(() => {
+    Aos.init();
+  }, []);
+
   return (
     <div className="my-account__inner">
-      
-      <div className="my-account__login">
+      <div className="my-account__login" data-aos="fade-left" data-aos-duration="2000" >
         <div className="my-account__box">
-          <h2 className="my-account__title">Login</h2>
-          <form action="/" className="my-account__form f-login">
+          <h2 className="my-account__title" >Login</h2>
+          <form action="/" className="my-account__form f-login" >
             <div className="my-account__form-grup">
               <label htmlFor="femail">Username or Email address</label>
               <Input autoFocus="true" autoComplete="off" id="femail" type="email" name="email" value={formData.email} onChange={handleChange} variant="primary" />

@@ -7,8 +7,11 @@
   &__grid {
     display: flex;
     margin-bottom: 48px;
+    justify-content: space-between;
     &__item {
-      width: 25%;
+      &:nth-child(1) {
+        flex-basis: 25%;
+      }
     }
   }
   &__title {
@@ -22,22 +25,43 @@
     color: color(grey, 2);
     margin-bottom: 55px;
   }
-  &__inner {
-    padding-left: 92px;
-  }
   &__nav {
     list-style: none;
     padding: 0;
     margin-bottom: 0;
     font-weight: fw(medium);
+    transition: all 0.4s ease;
     &__item {
       margin-bottom: 46px;
       &:last-child {
         margin-bottom: 0;
       }
+      &:hover {
+        color: color(primary);
+        transition: all 0.4s ease;
+      }
     }
     &__link {
       text-decoration: none;
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        display: block;
+        border-bottom: 2px solid color(primary);
+        width: 100%;
+        border-radius: 1px;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: all .4s ease;
+      }
+      &:hover {
+        &::before {
+          transform: none;
+        }
+      }
     }
   }
   &__form {
@@ -48,6 +72,17 @@
       @include font-size(14);
       width: 200px;
       margin-right: 8px;
+      transition: all 0.4s ease;
+      &:focus {
+        border-color: color(primary);
+        transition: all 0.4s ease;
+
+        &::placeholder {
+          opacity: 0;
+          transition: all 0.4s ease;
+          transform: translateY(-4px);
+        }
+      }
     }
   }
   .btn--subs {
@@ -57,7 +92,12 @@
     border-bottom: solid 1px #000;
     @include font-size(14);
     font-weight: fw(semi-bold);
+    transition: all 0.4s ease;
     text-transform: uppercase;
+    &:hover {
+      color: color(primary);
+      border-color: color(primary);
+    }
   }
   &__copyright {
     border-top: solid 1px #d9d9d9;

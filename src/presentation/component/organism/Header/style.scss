@@ -63,6 +63,25 @@ header {
     &__link {
       text-decoration: none;
       font-weight: fw(medium);
+      position:relative;
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        display: block;
+        border-bottom: 2px solid color(primary);
+        width: 100%;
+        border-radius: 1px;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: all 0.4s ease;
+      }
+      &:hover {
+        &::before {
+          transform: none;
+        }
+      }
     }
     &.active {
       opacity: 0;
@@ -126,13 +145,6 @@ header {
           line-height: 24px;
           font-weight: fw(medium);
           border-radius: 50%;
-        }
-      }
-      &.cart {
-        &:hover {
-          .header__cart {
-            opacity: 1;
-          }
         }
       }
       .btn-nav {
@@ -255,12 +267,8 @@ header {
     top: 74px;
     width: 418px;
     background-color: color(white);
-    opacity: 0;
     transition: all 0.4s ease-in-out;
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
-    &.show {
-      opacity: 1;
-    }
     &__box {
       position: relative;
       padding-bottom: 40px;

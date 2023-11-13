@@ -39,6 +39,7 @@ a {
   font-weight: inherit;
   outline: 0;
   color: inherit;
+  text-decoration: none;
   &:hover,
   &:active,
   &:focus {
@@ -230,10 +231,6 @@ input[type="number"]::-webkit-outer-spin-button {
 ::-webkit-file-upload-button {
   font: inherit;
   -webkit-appearance: button;
-}
-
-input[type="number"] {
-  -moz-appearance: textfield;
 }
 
 /*/

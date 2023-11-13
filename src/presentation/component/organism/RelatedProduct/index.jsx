@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 // core-globalState
 import useCart from "core/state/useCart";
 // dataProduct
-import DataProduct from "./dataProducts";
+import DataProduct from "./dataRelated";
 // component
 import ProductCard from "presentation/component/molecule/ProductCard";
 import Button from "../../atom/Button";
@@ -13,7 +13,7 @@ import "aos/dist/aos.css";
 // style
 import "./style.scss";
 
-const SectionProduct = () => {
+const RelatedProduct = () => {
   const { add: addCart } = useCart();
   // -- onScroll
   useEffect(() => {
@@ -31,7 +31,7 @@ const SectionProduct = () => {
       <div className="container">
         <div className="product__wrapper">
           <h3 className="product__title" data-aos="fade" data-aos-duration="3000">
-            Our Product
+            Related Product
           </h3>
           <div className="product__list">
             {DataProduct.map((item) => (
@@ -49,4 +49,4 @@ const SectionProduct = () => {
   );
 };
 
-export default SectionProduct;
+export default RelatedProduct;

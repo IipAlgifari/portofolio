@@ -1,1 +1,36 @@
 @import "../../../../core/style/App.scss";
+
+.contact {
+  &__form-body {
+    padding: 0 52px 0 64px;
+    overflow: hidden;
+  }
+  &__form-group {
+    margin-bottom: 36px;
+    label {
+      @include font-size(16);
+      font-weight: fw(medium);
+      display: block;
+      margin-bottom: 22px;
+    }
+    #message {
+      width: 452px;
+      border-radius: 10px;
+      padding: 26px 30px;
+      border-color: color(grey, 2);
+      resize: none;
+    }
+  }
+  &__btn {
+    .btn-contact {
+      border-radius: 6px;
+      background-color: color(primary);
+      color: color(white);
+      font-weight: (normal);
+      &:hover {
+        color: color(primary);
+        transform: translateY(-2px);
+      }
+    }
+  }
+}

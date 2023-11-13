@@ -1,7 +1,6 @@
 @import "../../../../core/style/App.scss";
 
 .contact {
-  background-color: lightblue;
   padding: 92px 0 64px 0;
 
   &__head {
@@ -22,5 +21,32 @@
   &__body {
     padding-top: 114px;
     display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+  &__info {
+    padding: 0 75px 72px 106px;
+  }
+  &__box {
+    width: 212px;
+  }
+  &__item {
+    margin-bottom: 42px;
+    position: relative;
+    span {
+      position: absolute;
+      left: -32px;
+      top: 0;
+      @include font-size(18);
+    }
+    &__title {
+      @include font-size(24);
+      font-weight: fw(medium);
+      margin-bottom: 4px;
+    }
+    &__desc {
+      margin-bottom: 0;
+      font-weight: fw(regular);
+    }
   }
 }

@@ -2,13 +2,15 @@ import { create } from "zustand";
 
 const useCart = create((set) => ({
   items: [],
+  isOpen: true,
+  data: {},
   add: (data) => {
     set((state) => {
       let itemsUpdate = [];
       const itemsTemp = [...state.items];
       const itemsExist = itemsTemp.find((item) => item.id === data.id);
       if (itemsExist) {
-      // menjalanjakan data yg sudah
+        // menjalanjakan data yg sudah ada
         itemsExist.qty = itemsExist.qty + 1;
         itemsUpdate = itemsTemp;
       } else {
@@ -18,14 +20,22 @@ const useCart = create((set) => ({
       return { items: itemsUpdate };
     });
   },
-  remove: () => {
-
+  remove: (data) => {
+    set((state) => {
+      const { id } = data;
+      const items = state.items.filter((item) => item.id !== id);
+      return {
+        items,
+      };
+    });
   },
-  update: () => {
-
-  }
-  //   increasePopulation: () => set((state) => ({ bears: state.bears + 1 })),
-  //   removeAllBears: () => set({ bears: 0 }),
+  update: (data) => {
+    set((state) => {
+      // Cari id yang cocok
+      // Jika ada
+      // Return value
+    });
+  },
 }));
 
 export default useCart;

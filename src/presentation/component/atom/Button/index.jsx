@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "./style.scss";
 
 const Button = (props) => {
   const { variant, link, children } = props;

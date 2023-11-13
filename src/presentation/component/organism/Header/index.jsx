@@ -8,7 +8,6 @@ import FormatRupiah from "core/util/FormatRupiah/formatRupiah";
 // component
 import Button from "presentation/component/atom/Button";
 import List from "./listSearch";
-import useGlobalState, { stateCart } from "core/state/cart";
 
 // icons
 import { BiSearch } from "react-icons/bi";
@@ -28,10 +27,9 @@ const Header = () => {
   const [visible, setVisible] = useState(true);
   const [openChart, setOpenChart] = useState("0");
   const [query, setQuery] = useState("");
-  const [cart] = useGlobalState(stateCart);
   let totalPrice = 0;
 
-  const { items: listCart } = useCart();
+  const { items: listCart, remove: deleteCart } = useCart();
 
   // --handleScrollHeader
   useEffect(() => {
@@ -55,7 +53,7 @@ const Header = () => {
       }
     };
     document.addEventListener("mousdown", handleOpenSearch);
-  });
+  }, []);
   const handleSearchClose = (e) => {
     e.preventDefault();
     setOpen(false);
@@ -68,15 +66,17 @@ const Header = () => {
 
   const chartStyles = {
     opacity: `${openChart}`,
+    visibility: `${openChart === "0" ? "hidden" : "visible"}`,
   };
   //-- total-price-cart
-  cart.map((item) => {
+  listCart.map((item) => {
     totalPrice = FormatRupiah(item.price * item.qty);
     return item;
   });
   // -- deleteItemCart
   const handleDeleteItem = (itemIdToDelete) => {
-    stateCart.delete({ id: itemIdToDelete });
+    deleteCart({ id: itemIdToDelete });
+    // updateCart({ id: 1, qty: 10 });
   };
 
   return (
@@ -138,7 +138,7 @@ const Header = () => {
               <li className="header__nav__item">
                 <Button type="button" variant="icons btn-nav" className="header__nav__link" to="/">
                   <AiOutlineHeart />
-                  <span>{cart?.length > 0 ? cart?.length : 0}</span>
+                  <span>{listCart?.length > 0 ? listCart?.length : 0}</span>
                 </Button>
               </li>
               <li className="header__nav__item">

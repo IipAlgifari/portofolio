@@ -1,0 +1,16 @@
+@import "../../../../core/style/App.scss";
+
+.product {
+  padding: 24px 0;
+  &__title {
+    @include font-size(40);
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 24px;
+    justify-content: space-between;
+  }  
+}

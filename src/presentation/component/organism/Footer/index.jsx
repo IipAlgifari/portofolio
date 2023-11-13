@@ -2,11 +2,6 @@ import { Link } from "react-router-dom";
 
 import "./style.scss";
 
-// import { useEffect, useState } from "react";
-
-// -- component util
-// import formatRupiah from "core/util/formatRupiah";
-
 const Footer = () => {
   return (
     <footer className="site-footer">
@@ -59,7 +54,7 @@ const Footer = () => {
                       Blog
                     </Link>
                   </li>
-                  <li className="site-footer__help__item">
+                  <li className="site-footer__nav__item">
                     <Link className="site-footer__nav__link" to="/">
                       Privacy Policies
                     </Link>

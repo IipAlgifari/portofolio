@@ -7,6 +7,14 @@ const dbProduct = [
     price: 2500000,
     label: 30,
     startingprice: 3500000,
+    images: [
+      {
+        img: ""
+      }
+    ],
+    sizes: ["XL", "L"],
+    detail: "<p>kondisi: <br> Baru </p> <br> - jsksks <br>",
+    star: 5
   },
   {
     id: 2,
