@@ -1,0 +1,155 @@
+@import "../../../../core/style/App.scss";
+
+.info-product {
+  padding: 48px 0 58px 0;
+  &__nav {
+    margin-bottom: 36px;
+    &__list {
+      display: flex;
+      justify-content: center;
+      list-style-type: none;
+      gap: 52px;
+      padding: 0;
+      margin: 0;
+    }
+    &__item {
+      padding: 0;
+      @include font-size(24);
+    }
+  }
+
+  //description
+  &__txt {
+    padding: 0 120px;
+    margin-bottom: 36px;
+    color: color(grey, 2);
+    font-weight: fw(regular);
+  }
+  &__desc {
+    margin-bottom: 30px;
+  }
+  &__description {
+    margin-bottom: 0;
+  }
+  &__img {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    &__item {
+      background-color: #f9f1e7;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 348px;
+      padding: 16px;
+    }
+    &__el {
+      display: block;
+      height: 100%;
+    }
+  }
+
+  //addintional information
+  &__tabs__addintional {
+    display: none;
+  }
+
+  //reviews
+
+  &__form-reviews {
+    // display: flex;
+    display: none;
+    justify-content: center;
+    gap: 42px;
+    visibility: hidden;
+  }
+  &__form-box {
+    padding: 32px;
+    background-color: lightgrey;
+    .form-group {
+      margin-bottom: 16px;
+      label {
+        display: block;
+        margin-bottom: 22px;
+        font-weight: fw(medium);
+      }
+      textarea {
+        width: 452px;
+        border-radius: 10px;
+        padding: 16px 30px;
+        border-color: #9f9f9f;
+        resize: none;
+        height: 180px;
+      }
+      .scroll::-webkit-scrollbar {
+        display: none;
+      }
+      .rating-stars {
+        .stars-yellow {
+          color: #ffc400;
+        }
+        span {
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+  &__title {
+    @include font-size(20);
+    margin-bottom: 24px;
+  }
+
+  &__reviews {
+    width: 40%;
+    max-height: 600px;
+    padding: 32px;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  &__inner {
+    margin-bottom: 24px;
+  }
+  &__profile {
+    font-size: 0;
+    margin-bottom: 8px;
+    &__img {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 32px;
+      border-radius: 50px;
+      text-align: center;
+      width: 52px;
+      margin-right: 12px;
+    }
+    &__name {
+      display: inline-block;
+      vertical-align: middle;
+      @include font-size(18);
+      color: color(grey, 6);
+      margin-bottom: 0;
+    }
+  }
+  &__box-stars {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    p {
+      margin-bottom: 0;
+      @include font-size(14);
+    }
+  }
+  &__star-rating {
+    margin-bottom: 4px;
+  }
+  &__box-comment {
+    background-color: #f0f3f7;
+    padding: 8px;
+    overflow-wrap: break-word;
+    overflow: hidden;
+    max-height: 4 * 1.2em;
+  }
+  #read-more-btn {
+    display: none; /* Sembunyikan tombol secara default */
+  }
+}

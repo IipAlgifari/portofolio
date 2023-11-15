@@ -4,6 +4,7 @@ import { FaAngleRight, FaStarHalf, FaPlus, FaSquareFacebook, FaSquareXTwitter, F
 import { BsFillStarFill } from "react-icons/bs";
 import { FaMinus } from "react-icons/fa";
 import "./style.scss";
+import InfoProductDetail from "presentation/component/molecule/InfoProductDetail";
 import Button from "presentation/component/atom/Button";
 import Input from "presentation/component/atom/Input";
 
@@ -160,6 +161,7 @@ const SectionProductDetails = () => {
             </div>
           </div>
         </div>
+        <InfoProductDetail/>
       </div>
     </div>
   );

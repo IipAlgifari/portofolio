@@ -234,7 +234,7 @@ const Header = () => {
           </div>
           {/* link-action */}
           <div className="header__cart__action">
-            <Link type="link" className="cart-action" to="/detail-product">
+            <Link type="link" className="cart-action" to="/cart">
               Cart
             </Link>
             <Link type="link" className="cart-action" to="/chekout">

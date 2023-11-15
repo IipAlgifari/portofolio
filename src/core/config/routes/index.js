@@ -5,6 +5,7 @@ import Contact from "presentation/container/page/Contact";
 import Blog from "presentation/container/page/Blog";
 import DetailProduct from "presentation/container/page/DetailProduct";
 import MyAccount from "presentation/container/page/MyAccount";
+import Cart from "presentation/container/page/Cart";
 
 const routeConfig = [
   {
@@ -35,6 +36,10 @@ const routeConfig = [
   {
     path: "/my-account",
     element: <MyAccount />,
+  },
+  {
+    path: "/cart",
+    element: <Cart />,
   },
 ];
 

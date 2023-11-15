@@ -1,0 +1,22 @@
+@import "../../../../core/style/App.scss";
+
+.blog {
+    padding: 92px 0 ;
+    &__wrapper {
+        display: flex;
+        justify-content: flex-start;
+        gap: 30px;
+    }
+    &__post {
+        flex-basis: 820px;
+    }
+    &__side {
+        position: relative;
+    }
+    &__side-container {
+        position: sticky;
+        top: 109px;
+        transition: all .3s ease;
+        scroll-behavior: smooth;
+    }
+}

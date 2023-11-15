@@ -1,0 +1,110 @@
+@import "../../../../core/style/App.scss";
+
+.cart {
+  padding: 64px 0;
+  &__wrapper {
+    display: flex;
+    justify-content: flex-end; 
+    gap: 30px;
+  }
+  &__box {
+    width: 817px;
+    position: relative;
+  }
+  .i--checkbox {
+    left: 20px;
+    top: 16px;
+    height: 24px;
+    width: 24px;
+  }
+  &__menu {
+    background-color: color(secondary);
+    padding: 16px;
+    border-radius: 4px;
+    &__list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: space-around;
+      font-weight: fw(medium);
+    }
+    &__item {
+      text-align: right;
+      &:first-child {
+        flex: 0 0 230px;
+      }
+      &:nth-child(2) {
+        flex-basis: 182px;
+      }
+      &:nth-child(3) {
+        flex-basis: 132px;
+        text-align: center;
+      }
+      &:last-child {
+        flex-basis: 114px;
+        text-align: left;
+      }
+    }
+  }
+
+  // Product-item
+  &__product {
+    padding: 42px 20px;
+    &__item {
+      display: flex;
+      justify-items: first baseline;
+      gap: 24px;
+      align-items: center;
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      position: relative;
+      border-bottom: solid 1px color(grey, 2);
+      p {
+        margin-bottom: 0;
+      }
+      span {
+        @include font-size(24);
+        margin-bottom: 0;
+        color: color(primary);
+        position: absolute;
+        right: 0;
+      }
+    }
+    &__img {
+      flex: 0 0 108px;
+      height: 105px;
+      overflow: hidden;
+      border-radius: 6px;
+      background-color: color(secondary);
+      font-size: 0;
+      &:hover .cart__product__img__el {
+        scale: 1.03;
+      }
+      &__el {
+        height: 100%;
+        display: block;
+        transition: all .4s ease;
+      }
+    }
+    &__name {
+      max-width: 150px;
+      max-height: fit-content;
+      color: color(grey, 2);
+      line-height: 20px;
+    }
+    &__price {
+      flex-basis: 170px;
+      text-align: center;
+      color: color(grey, 2);
+    }
+    .i-cart {
+      border: 1px solid color(grey, 2);
+      border-radius: 4px;
+    }
+    &__subtotal {
+      flex-basis: 170px;
+      text-align: center;
+    }
+  }
+}
