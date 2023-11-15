@@ -48,3 +48,12 @@
   padding: 0;
   background-color: color(secondary);
 }
+
+.i--blog-search {
+  width: 310px;
+  height: 58px;
+  border-radius: 6px;
+  &:focus {
+    border-color: color(primary);
+  }
+}

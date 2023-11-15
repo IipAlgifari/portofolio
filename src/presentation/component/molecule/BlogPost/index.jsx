@@ -1,4 +1,6 @@
 import Button from "presentation/component/atom/Button";
+import { BsPersonFill, BsFillTagFill } from "react-icons/bs";
+import { AiFillCalendar } from "react-icons/ai";
 import "./style.scss";
 
 const BlogPost = () => {
@@ -8,7 +10,19 @@ const BlogPost = () => {
         <div className="blog__img">
           <img src="asset/images/dummy/blog/img-blog-1.jpg" alt="blog-post" className="blog__img__el" />
         </div>
-        <div className="blog__time">04 Feb 2023</div>
+        <div className="blog__time">
+          <ul>
+            <li>
+              <BsPersonFill /> Admin
+            </li>
+            <li>
+              <AiFillCalendar /> 20 Aug 2023
+            </li>
+            <li>
+              <BsFillTagFill /> Wood
+            </li>
+          </ul>
+        </div>
         <div className="blog__txt">
           <h3 className="blog__title">Going all-in with millennial design</h3>
           <p className="blog__article">

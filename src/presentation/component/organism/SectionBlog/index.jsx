@@ -1,7 +1,11 @@
-import BlogPost from "presentation/component/molecule/BlogPost";
 import React from "react";
-import "./style.scss";
+//component
+import BlogPost from "presentation/component/molecule/BlogPost";
 import RecentPostCard from "presentation/component/molecule/RecentPost";
+import CategoriBlog from "presentation/component/molecule/CategoriBlog";
+// style
+import "./style.scss";
+
 
 const SectionBlog = () => {
   return (
@@ -13,13 +17,11 @@ const SectionBlog = () => {
               <BlogPost />
               <BlogPost />
               <BlogPost />
-              <BlogPost />
-              <BlogPost />
-              <BlogPost />
             </div>
           </div>
           <div className="blog__side">
             <div className="blog__side-container">
+              <CategoriBlog/>
               <RecentPostCard />
             </div>
           </div>

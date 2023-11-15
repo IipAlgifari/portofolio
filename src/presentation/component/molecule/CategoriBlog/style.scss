@@ -1,0 +1,43 @@
+@import "../../../../core/style/App.scss";
+
+.blog {
+  &__categories {
+    padding: 0 42px 52px 42px;
+
+    &__form {
+      position: relative;
+      margin-bottom: 42px;
+    }
+    .blog-btn {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &__box {
+      padding: 0 24px;
+      color: color(grey, 2);
+    }
+    &__title {
+      @include font-size(24);
+      margin-bottom: 32px;
+      font-weight: fw(medium);
+      color: color(black);
+    }
+    &__item {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 32px;
+      span {
+        flex-basis: 20%;
+        align-items: flex-end ;
+      }
+    }
+    &__subtitle {
+      margin-bottom: 0;
+      flex-basis: 80%;
+      align-items: flex-start;
+    }
+  }
+}

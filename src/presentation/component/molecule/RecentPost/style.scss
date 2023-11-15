@@ -1,0 +1,45 @@
+@import "../../../../core/style/App.scss";
+
+.blog {
+  .blog__recent-post {
+    width: 393px;
+    max-height: 620px;
+    padding: 16px 56px;
+    &__title {
+      @include font-size(24);
+      font-weight: fw(medium);
+      margin-bottom: 24px;
+    }
+    &__item {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 32px;
+    }
+    &__img {
+        flex-basis: 80px;
+        height: 80px;
+        border-radius: 10px;
+        overflow: hidden;
+        &__el {
+          display: block;
+          height: 100%;
+          width: 100%;
+        }
+    }
+    &__txt {
+        max-height: 80px;
+        overflow: hidden;
+    }
+    &__s-title {
+      font-weight: fw(medium);
+      @include font-size(14);
+      margin-bottom: 5px;
+    }
+    &__time {
+      font-size: 12px;
+      line-height: 18px;
+      margin-bottom: 0;
+      color: color(grey, 2);
+    }
+  }
+}
