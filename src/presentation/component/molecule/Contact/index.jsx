@@ -1,15 +1,13 @@
 import React, {useEffect} from "react";
+import { initAnimation } from "core/util/Animate/animate";
 import "./style.scss";
 import Input from "presentation/component/atom/Input";
 import Button from "presentation/component/atom/Button";
-// -- onScroll
-import Aos from "aos";
-import "aos/dist/aos.css";
 
 const Contact = () => {
   // -- onScroll
   useEffect(() => {
-    Aos.init();
+    initAnimation();
   }, []);
   return (
     <div className="contact__form-body" data-aos="fade" data-aos-duration="2000">

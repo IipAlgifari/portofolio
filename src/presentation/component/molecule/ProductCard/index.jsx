@@ -1,12 +1,11 @@
 // core
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 // vendor
 import { FaRegHeart } from "react-icons/fa";
 import { BsArrowLeftRight, BsShareFill, BsThreeDots } from "react-icons/bs";
 import { MdClose } from "react-icons/md";
-
 // utils
 import formatRupiah from "core/util/FormatRupiah/formatRupiah";
 
@@ -16,19 +15,9 @@ import Button from "../../atom/Button/";
 // style
 import "./style.scss";
 
-const ProductCard = ({ item, handleClickItem }) => {
-  const { name, description, image, price, isDiscount, discount, isNew, isOld, startingprice } = item;
+const ProductCard = ({ item, handleClickItem, handleClickProduct }) => {
+  const { name, description, image, price, isDiscount, discount, isNew, startingprice } = item;
   const [isOpen, setIsOpen] = useState(false);
-
-  //-- handleProduct
-  useEffect(() => {
-    // let handleOpenPopup = (e) => {
-    //   if (e.target) {
-    //     setIsOpen(false);
-    //   }
-    // };
-    // document.addEventListener("mousedown", handleOpenPopup);
-  });
 
   const handleClosePopup = (e) => {
     e.preventDefault();
@@ -36,26 +25,25 @@ const ProductCard = ({ item, handleClickItem }) => {
   };
 
   return (
-    <div className="product__item">
-      <div className="product__card">
-        <a href="/detail-product" className="wrapper-link">
+    <div className="product__item" >
+      <div className="product__card" onClick={(item) => {return handleClickProduct(item)}} >
+        {/* <a type="button" href="/detail-product" className="wrapper-link">
           <span></span>
-        </a>
+        </a> */}
         <div className="product__img">
           <div className="product__img__box">
             <img src={image} alt={name} className="product__img__el" />
           </div>
         </div>
-        {isDiscount && <div className="product__label__discount">{discount + "%"}</div>}
-        {isNew && <div className="product__label__new">New</div>}
-        {isOld && <div className="product__label__old">Old</div>}
+        {isDiscount && <span className="product__label discount">{discount + "%"}</span>}
+        <div className={isNew ? "product__label new" : "product__label__old"}>{isNew ? "New" : ""}</div>
         <div className="product__text">
           <h5 className="product__name">{name}</h5>
           <p className="product__desc">{description}</p>
         </div>
         <div className="product__price">
           <p className="product__price__fix">{formatRupiah(price)}</p>
-          <s className="product__price__str-price">{startingprice}</s>
+          {startingprice > 0 ? <s className="product__price__str-price">{formatRupiah(startingprice)}</s> : <></>}
         </div>
         <div className="product__dots">
           <Button

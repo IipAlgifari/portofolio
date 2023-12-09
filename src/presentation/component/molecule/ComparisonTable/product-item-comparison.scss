@@ -1,0 +1,71 @@
+@import "../../../../core/style/App.scss";
+
+.comparison {
+  &__product {
+    &__item {
+      flex-basis: 280px;
+    }
+    &__img {
+      height: 177px;
+      overflow: hidden;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: color(secondary);
+      margin-bottom: 18px;
+      &__el {
+        display: block;
+        height: 100%;
+        width: 100%;
+      }
+    }
+    &__title {
+      @include font-size(24);
+      font-weight: fw(medium);
+      line-height: 126%;
+      margin-bottom: 6px;
+    }
+    &__price {
+      @include font-size(18);
+      font-weight: fw(medium);
+      margin-bottom: 10px;
+    }
+    &__rate {
+      font-size: 0;
+    }
+    &__rate-stars {
+      @include font-size(18);
+      margin-bottom: 0;
+      display: inline-block;
+      vertical-align: middle;
+      position: relative;
+      margin-right: 9px;
+      padding-right: 9px;
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 1.5px;
+        height: 100%;
+        background-color: color(grey, 2);
+      }
+      span {
+        margin-right: 4px;
+      }
+      .str {
+        color: color(star);
+        @include font-size(20);
+        line-height: 25px;
+        text-align: center;
+      }
+    }
+    &__review {
+      display: inline-block;
+      vertical-align: middle;
+      @include font-size(14);
+      margin-bottom: 0;
+      color: color(grey, 2);
+    }
+  }
+}

@@ -1,8 +1,8 @@
 // component
 import Gallery from "presentation/component/molecule/Gallery";
 
-// style 
-import "./style.scss"
+// style
+import "./style.scss";
 
 const SectionGallery = () => {
   return (
@@ -12,11 +12,10 @@ const SectionGallery = () => {
           <p className="gallery__desc">Share your setup with</p>
           <h3 className="gallery__title">#FurniroFurniture</h3>
         </div>
+        <Gallery />
       </div>
-      <Gallery/>
     </section>
   );
 };
 
 export default SectionGallery;
-

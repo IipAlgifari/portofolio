@@ -1,29 +1,33 @@
+//core
 import React, { useEffect } from "react";
-// core-globalState
+import { useNavigate } from "react-router-dom";
 import useCart from "core/state/useCart";
+import { initAnimation } from "core/util/Animate/animate";
 // dataProduct
 import DataProduct from "./dataProducts";
 // component
 import ProductCard from "presentation/component/molecule/ProductCard";
 import Button from "../../atom/Button";
-// -- onScroll
-import Aos from "aos";
-import "aos/dist/aos.css";
 
 // style
 import "./style.scss";
 
 const SectionProduct = () => {
   const { add: addCart } = useCart();
+  const navigate = useNavigate();
+
   // -- onScroll
   useEffect(() => {
-    Aos.init();
+    initAnimation();
   }, []);
 
   // -- handleClick-item
   const handleClickItem = (item) => {
-    console.log(item);
     addCart(item);
+  };
+  // -- handleClick-product
+  const handleClickProduct = (item) => {
+    navigate(`/detail-product/${item.id}`);
   };
 
   return (
@@ -35,7 +39,7 @@ const SectionProduct = () => {
           </h3>
           <div className="product__list">
             {DataProduct.map((item) => (
-              <ProductCard key={item.id} item={item} handleClickItem={handleClickItem} />
+              <ProductCard key={item.id} item={item} handleClickItem={handleClickItem} handleClickProduct={handleClickProduct} />
             ))}
           </div>
           <div className="product__btn" data-aos="fade-left" data-aos-duration="1000">

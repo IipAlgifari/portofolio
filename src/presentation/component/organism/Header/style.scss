@@ -6,28 +6,45 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 24px 0 20px 0;
+  padding: 24px  0;
   background-color: color(white);
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
   z-index: 9;
   transition: all 0.4s ease;
+  @include medium {
+    padding: 18px 0;
+  }
   .container {
     position: relative;
   }
 }
 .header {
   display: flex;
+  position: relative;
+  @include medium {
+    justify-content: space-between;
+  }
   &__logo {
     width: 25%;
     display: flex;
-    padding-top: 8px;
+    align-items: center;
+    gap: 6px;
+    @include large {
+      width: 25%;
+    }
+    @include small {
+      width: 40%;
+    }
     &__img {
       text-decoration: none;
-      margin-right: 5px;
       &__el {
         display: block;
         width: 50px;
         height: 38px;
+        @include medium {
+          width: 42px;
+          height: 28px;
+        }
       }
     }
   }
@@ -35,26 +52,91 @@ header {
     font-size: 34px;
     line-height: 42px;
     margin: 0;
+    @include medium {
+      @include font-size(24);
+    }
   }
+
+  // burger-menu
+  .burger-menu {
+    $b: &;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+    @include small {
+      display: block;
+    }
+    .btn--burger-menu {
+      outline: 0;
+      padding: 10px 0;
+      border: 0;
+      width: 48px;
+      height: 48px;
+      z-index: 2;
+      span {
+        display: block;
+        border-bottom: 3px solid color(black);
+        width: 28px;
+        @include radius(0);
+        margin: 0 auto 6px;
+        transition: all 0.3s  ease;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
   &__menu {
     width: 50%;
     padding: 12px 0 10px 0;
+    align-items: center;
     transition: all 0.6s ease;
     transition-delay: 0.3s;
+    // Responsive
+    @include large {
+      width: 45%;
+    }
+    @include medium {
+      display: block;
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: color(secondary);
+      padding: 18px 72px;
+    }
+    @include small {
+      padding: 18px 32px;
+    }
+    @include extra-small {
+      padding: 12px 24px;
+    }
     &__list {
-      padding: 4px 0;
+      padding: 0;
       margin: 0;
       display: flex;
       list-style: none;
       justify-content: center;
+      gap: 75px;
+      @include large {
+        gap: 42px;
+      }
+      @include medium {
+        justify-content: space-around;
+      }
     }
     &__item {
       list-style: none;
-      margin-right: 75px;
       transition: all 0.4s ease;
-      &:last-child {
-        margin-right: 0;
-        transition: all 0.4s ease;
+      span {
+        display: none;
+        @include medium {
+          display: block;
+          text-align: center;
+        }
       }
       &:hover {
         color: color(primary);
@@ -63,7 +145,10 @@ header {
     &__link {
       text-decoration: none;
       font-weight: fw(medium);
-      position:relative;
+      position: relative;
+      @include extra-small {
+        @include font-size(14);
+      }
       &::before {
         content: "";
         position: absolute;
@@ -95,23 +180,35 @@ header {
     padding: 8px 0;
     transition: all 0.4s ease-out;
     transition-delay: 0.3s;
+    @include large {
+      width: 30%;
+    }
+    @include medium {
+      width: 50%;  
+    }
+    @include small {
+      position: fixed;
+      top: 86px;
+      left: 0;
+      width: 100%;
+      padding: 16px 0;
+      background-color: color(secondary);
+      text-align: center;
+      display: none;
+    }
     &__list {
       padding: 0;
       margin: 0;
       list-style: none;
       display: flex;
       justify-content: flex-end;
+      gap: 42px;
+      @include medium {
+        gap: 56px;
+      }
     }
     &__item {
-      margin-right: 42px;
-      padding: 4px;
       transition: all 0.4s ease;
-      &:first-child {
-        .btn-nav {
-          position: relative;
-          top: -3px;
-        }
-      }
       &:nth-child(3) {
         position: relative;
         span {
@@ -145,6 +242,7 @@ header {
           line-height: 24px;
           font-weight: fw(medium);
           border-radius: 50%;
+          transition: all 0.3s ease;
         }
       }
       .btn-nav {
@@ -154,6 +252,9 @@ header {
         line-height: 28px;
         text-align: center;
         padding: 0;
+        svg {
+          vertical-align:baseline;
+        }
       }
     }
     &.active {
@@ -269,6 +370,10 @@ header {
     background-color: color(white);
     transition: all 0.4s ease-in-out;
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+    @include medium {
+      top: 64px;
+      right: 64px;
+    }
     &__box {
       position: relative;
       padding-bottom: 40px;
@@ -406,13 +511,13 @@ header {
 //Scrolling
 .visible {
   top: 0;
-  transition: top 0.4s ease-out;
+  transition: top 0.5s ease;
 }
 
 .hidden {
   /* display: none; */
   top: -108px;
-  transition: top 0.4s ease-out;
+  transition: top 0.5s ease;
 }
 
 .bg-overlay {

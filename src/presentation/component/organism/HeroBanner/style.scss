@@ -2,19 +2,22 @@
 @import "../../../../core/style/App.scss";
 
 .hero-banner {
-  padding-top: 108px;
   height: 700px;
+  overflow: hidden;
+  @include small {
+    height: 100vh;
+  }
   &__img {
     height: 100%;
     overflow: hidden;
     &__el {
       display: block;
       object-fit: cover;
-      height: 700px;
+      height: 100%;
       width: 100%;
     }
   }
-  .container {
+  &__wrapper {
     position: relative;
   }
 }

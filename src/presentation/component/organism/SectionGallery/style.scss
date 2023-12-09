@@ -9,8 +9,17 @@
     @include font-size(20);
     font-weight: fw(medium);
     margin-bottom: 8px;
+    @include medium {
+      @include font-size(16);
+    }
   }
   &__title {
     @include font-size(40);
+    @include large {
+      @include font-size(32);
+    }
+    @include small {
+      @include font-size(24);
+    }
   }
 }

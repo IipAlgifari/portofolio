@@ -1,9 +1,6 @@
 import React, {useEffect} from "react";
 import Contact from "presentation/component/molecule/Contact";
-
-// aos
-import Aos from "aos";
-import "aos/dist/aos.css";
+import { initAnimation } from "core/util/Animate/animate";
 
 // icons
 import { FaLocationDot } from "react-icons/fa6";
@@ -15,7 +12,7 @@ import "./style.scss";
 const SectionContact = () => {
   // -- onScroll
   useEffect(() => {
-    Aos.init();
+    initAnimation();
   });
 
   return (

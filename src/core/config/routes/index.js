@@ -6,6 +6,8 @@ import Blog from "presentation/container/page/Blog";
 import DetailProduct from "presentation/container/page/DetailProduct";
 import MyAccount from "presentation/container/page/MyAccount";
 import Cart from "presentation/container/page/Cart";
+import ProductComparison from "presentation/container/page/ProductComparison";
+import Checkout from "presentation/container/page/Checkout";
 
 const routeConfig = [
   {
@@ -40,6 +42,14 @@ const routeConfig = [
   {
     path: "/cart",
     element: <Cart />,
+  },
+  {
+    path: "/checkout",
+    element: <Checkout />,
+  },
+  {
+    path: "/comparison",
+    element: <ProductComparison />,
   },
 ];
 

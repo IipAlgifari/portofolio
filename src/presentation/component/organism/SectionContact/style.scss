@@ -2,6 +2,9 @@
 
 .contact {
   padding: 92px 0 64px 0;
+  @include medium {
+    padding: 72px 0 56px 0;
+  }
 
   &__head {
     margin-bottom: 14px;
@@ -11,6 +14,13 @@
     @include font-size(36);
     margin-bottom: 8px;
     font-weight: fw(semi-bold);
+    @include large {
+      @include font-size(32);
+    }
+    @include small {
+      @include font-size(24);
+      margin-bottom: 6px;
+    }
   }
   &__description {
     color: color(grey, 2);
@@ -23,6 +33,10 @@
     display: flex;
     justify-content: center;
     gap: 30px;
+    @include medium {
+      padding-top: 72px;
+      gap: 24px;
+    }
   }
   &__info {
     padding: 0 75px 72px 106px;

@@ -13,12 +13,12 @@ import SectionFeature from "presentation/component/organism/SectionFeature";
 const Home = () => {
   return (
     <Default>
-      <HeroBanner />
+      <HeroBanner /> 
       <SectionBrowse title="Browse The Range" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
       <SectionProduct title="Our Products" />
       <SectionInspirations title="50+ Beautiful rooms inspiration" description="Our designer already made a lot of beautiful prototipe of rooms that inspire you" />
       <SectionGallery/>
-      <SectionFeature/>
+       <SectionFeature/>
     </Default>
   );
 };

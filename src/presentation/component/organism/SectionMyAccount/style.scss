@@ -2,29 +2,60 @@
 
 .my-account {
   padding: 64px 0;
+  @include small {
+    padding: 54px 0;
+  }
   &__wrapper {
     display: flex;
     justify-content: space-around;
     gap: 26px;
+    @include large {
+      gap:22px;
+    }
+    @include medium {
+      display: block;
+    }
   }
   &__inner {
     padding: 36px 78px 58px 72px;
-    width: 608px;
+    @include large {
+      padding: 22px 12px 48px 12px;
+    }
+    @include medium {
+      padding: 20px 0;
+      
+    }
   }
 
   &__title {
     @include font-size(36);
     font-weight: fw(semi-bold);
     margin-bottom: 36px;
+    @include small {
+      @include font-size(24);
+      margin-bottom: 16px;
+    }
   }
 
   &__form-grup {
     margin-bottom: 36px;
+    @include medium {
+      margin-bottom: 28px;
+    }
+    @include small {
+      margin-bottom: 24px;
+    }
+    @include extra-small {
+      margin-bottom: 20px;
+    }
   }
   label {
     font-weight: fw(medium);
     margin-bottom: 22px;
     display: block;
+    @include small {
+      margin-bottom: 18px;
+    }
   }
   input:focus {
     border-color: color(primary);

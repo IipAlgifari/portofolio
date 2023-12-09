@@ -1,0 +1,98 @@
+@import "../../../../core/style/App.scss";
+
+.checkout {
+  //Checkout-form
+  &__form-group {
+    margin-bottom: 36px;
+    &.name {
+      display: flex;
+      gap: 31px;
+    }
+    label {
+      display: block;
+      margin-bottom: 22px;
+    }
+    &:nth-child(5) {
+      margin-bottom: 76px;
+    }
+  }
+
+  // placeorder
+  &__placeorder {
+    &__box {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 32px;
+      border-bottom: solid 1.5px color(grey, 10);
+    }
+    &__title {
+      @include font-size(24);
+      font-weight: fw(medium);
+      margin-bottom: 14px;
+    }
+    &__list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      li {
+        margin-bottom: 22px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    &__price {
+      text-align: right;
+    }
+    &__total-price {
+      @include font-size(24);
+      font-weight: fw(semi-bold);
+      color: color(primary);
+    }
+
+    //transfer
+    &__transfer {
+      padding: 24px 0 42px 0;
+    }
+    &__small-title {
+      margin-bottom: 12px;
+      font-weight: fw(medium);
+      padding-left: 20px;
+      position: relative;
+      &::after {
+        content: "";
+        display: block;
+        width: 14px;
+        height: 14px;
+        background-color: color(black);
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 50%;
+      }
+    }
+    &__desc {
+      color: color(grey, 2);
+      font-weight: fw(light);
+    }
+    &__btn {
+      text-align: center;
+      p {
+        margin-bottom: 40px;
+        text-align: left;
+      }
+      .btn--cart {
+        width: 318px;
+      }
+    }
+  }
+  &__f-payment-method {
+    margin-bottom: 22px;
+    color: color(grey, 2);
+    font-weight: fw(nedium);
+    input {
+      margin-right: 15px;
+    }
+  }
+}

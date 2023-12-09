@@ -1,0 +1,37 @@
+@import "../../../../core/style/App.scss";
+
+.comparison {
+  &__tbl {
+    display: flex;
+    border-top: solid 1px color(grey, 2);
+    &__box {
+      flex-basis: 25%;
+      border-right: solid 1px color(grey, 2);
+    }
+    &__item {
+      margin-bottom: 72px;
+      padding: 42px 42px 0 62px;
+      .comparison__tbl__content {
+        padding-top: 62px;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          margin-bottom: 32px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+    &__title {
+      @include font-size(28);
+      line-height: 126%;
+      font-weight: fw(medium);
+      margin-bottom: 28px;
+    }
+  }
+}

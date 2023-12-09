@@ -44,7 +44,7 @@ const Feature = () => {
     <Fragment>
       {data.map((val, index) => {
         return (
-          <div key={index} className="feature__item" data-aos="fade-left" data-aos-duration="3000">
+          <div key={index} className="feature__item" data-aos="fade-up" data-aos-duration="2000">
             <div className="feature__img">
               <img src={val.img} alt={val.title} className="feature__img__el" />
             </div>

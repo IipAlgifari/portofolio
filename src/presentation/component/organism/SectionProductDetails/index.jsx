@@ -1,14 +1,22 @@
 import React from "react";
+// global state
+import useCart from "core/state/useCart";
 import { Link } from "react-router-dom";
+// icons
 import { FaAngleRight, FaStarHalf, FaPlus, FaSquareFacebook, FaSquareXTwitter, FaLinkedin } from "react-icons/fa6";
 import { BsFillStarFill } from "react-icons/bs";
 import { FaMinus } from "react-icons/fa";
-import "./style.scss";
+// component
 import InfoProductDetail from "presentation/component/molecule/InfoProductDetail";
 import Button from "presentation/component/atom/Button";
 import Input from "presentation/component/atom/Input";
 
+import "./style.scss";
+import formatRupiah from "core/util/FormatRupiah/formatRupiah";
+
 const SectionProductDetails = () => {
+  const {items: productItem} = useCart();
+
   return (
     <div className="product-detail">
       {/* -- head -- */}
@@ -64,8 +72,8 @@ const SectionProductDetails = () => {
 
           <div className="product-detail__content">
             <div className="product-detail__txt">
-              <h5 className="product-detail__name">Asgaard sofa</h5>
-              <p className="product-detail__price">Rp.250.000,000</p>
+              <h5 className="product-detail__name">{productItem.title}</h5>
+              <p className="product-detail__price">{productItem.price}</p>
               <div className="product-detail__content__box">
                 <ul className="product-detail__star">
                   <li>

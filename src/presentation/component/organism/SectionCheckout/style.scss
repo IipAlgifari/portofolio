@@ -1,0 +1,25 @@
+@import "../../../../core/style/App.scss";
+
+.checkout {
+  padding: 64px 0;
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__title {
+    margin-bottom: 36px;
+    h2 {
+      @include font-size(36);
+      font-weight: fw(semi-bold);
+      margin-bottom: 0;
+    }
+  }
+  &__billing-details {
+    flex-basis: 50%;
+    padding: 36px 72px;
+  }
+  &__place-order {
+    flex-basis: 45%;
+    padding: 86px 36px;
+  }
+}

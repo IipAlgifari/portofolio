@@ -1,26 +1,19 @@
 // -- core
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-
-// -- component
-// import BannerText from "presentation/component/molecule/BannerPage";
-
+import { initAnimation } from "core/util/Animate/animate";
+// -- icons
+import { BsChevronRight } from "react-icons/bs";
 // style
 import "./style.scss";
-
-import { BsChevronRight } from "react-icons/bs";
-
-// -- onScroll
-import Aos from "aos";
-import "aos/dist/aos.css";
 
 const SectionBanner = (props) => {
   const { logo, img, title, navprev, nav } = props;
 
   // --- onScroll
   useEffect(() => {
-    Aos.init();
-  });
+    initAnimation();
+  }, []);
 
   return (
     <section className="section-banner">

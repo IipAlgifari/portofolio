@@ -1,29 +1,72 @@
 @import "../../../../core/style/App.scss";
 
-.site-footer {
+.footer {
   padding: 48px 0 38px 0;
   border-top: solid 2px #d9d9d9;
   font-weight: fw(medium);
   &__grid {
     display: flex;
-    margin-bottom: 48px;
     justify-content: space-between;
+    @include medium {
+      display: block;
+    }
     &__item {
-      &:nth-child(1) {
-        flex-basis: 25%;
+      flex-basis: 25%;
+      @include medium {
+        margin-bottom: 32px;
       }
+    }
+  }
+  &__box {
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 42px;
+    @include large {
+      justify-content: space-between;
+    }
+    @include medium {
+      width: 100%;
+      justify-content: space-between;
+      margin-bottom: 32px;
+    }
+    @include extra-small {
+      display: block;
     }
   }
   &__title {
     margin-bottom: 48px;
     font-size: fz(24);
+    @include large {
+      margin-bottom: 42px;
+    }
+    @include medium {
+      margin-bottom: 26px;
+    }
+    @include small {
+      margin-bottom: 20px;
+    }
+    @include extra-small {
+      
+    }
   }
   &__desc {
+    margin-bottom: 0;
     color: color(grey, 2);
   }
   &__title-small {
     color: color(grey, 2);
     margin-bottom: 55px;
+    @include large {
+      margin-bottom: 42px;
+    }
+
+    @include medium {
+      margin-bottom: 26px;
+    }
+    @include small {
+      margin-bottom: 22px;
+    }
   }
   &__nav {
     list-style: none;
@@ -31,8 +74,19 @@
     margin-bottom: 0;
     font-weight: fw(medium);
     transition: all 0.4s ease;
+    @include extra-small {
+      display: none;
+    }
     &__item {
       margin-bottom: 46px;
+      // responsive
+      @include large {
+        margin-bottom: 32px;
+      }
+      @include small {
+        margin-bottom: 22px;
+      }
+
       &:last-child {
         margin-bottom: 0;
       }
@@ -45,7 +99,7 @@
       text-decoration: none;
       position: relative;
       &::before {
-        content: '';
+        content: "";
         position: absolute;
         bottom: -3px;
         left: 0;
@@ -55,7 +109,7 @@
         border-radius: 1px;
         transform: scaleX(0);
         transform-origin: left;
-        transition: all .4s ease;
+        transition: all 0.4s ease;
       }
       &:hover {
         &::before {
@@ -65,14 +119,19 @@
     }
   }
   &__form {
-    padding-left: 8px;
     &__input {
       border: 0;
+      padding: 0;
       border-bottom: 1px solid #000;
       @include font-size(14);
       width: 200px;
       margin-right: 8px;
       transition: all 0.4s ease;
+      @include small {
+        width: 150px;
+        display: block;
+        margin-bottom: 22px;
+      }
       &:focus {
         border-color: color(primary);
         transition: all 0.4s ease;
@@ -94,6 +153,7 @@
     font-weight: fw(semi-bold);
     transition: all 0.4s ease;
     text-transform: uppercase;
+    padding: 0;
     &:hover {
       color: color(primary);
       border-color: color(primary);
@@ -102,5 +162,8 @@
   &__copyright {
     border-top: solid 1px #d9d9d9;
     padding-top: 32px;
+    @include small {
+      padding-top: 24px;
+    }
   }
 }

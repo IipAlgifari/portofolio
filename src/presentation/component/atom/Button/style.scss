@@ -22,6 +22,16 @@
   padding: 25px 72px;
   text-transform: uppercase;
   transition: all 0.4s ease;
+  @include large {
+    padding: 20px 64px;
+  }
+  @include medium {
+    padding: 18px 54px;
+  }
+  @include small {
+    padding: 14px 44px;
+    @include font-size(14);
+  }
   &:hover {
     background-color: color(white);
     color: color(primary);
@@ -133,3 +143,12 @@
     background-color: color(primary);
   }
 }
+
+//view more
+.btn--view-more {
+  padding: 0;
+  color: color(grey, 2);
+  @include font-size(20);
+  font-weight: fw(medium);
+}
+

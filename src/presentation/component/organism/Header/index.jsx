@@ -11,15 +11,19 @@ import List from "./listSearch";
 
 // icons
 import { BiSearch } from "react-icons/bi";
-import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
-import { MdClose } from "react-icons/md";
-import { BsPersonExclamation, BsTrash } from "react-icons/bs";
+import {  AiOutlineShoppingCart } from "react-icons/ai";
+import { MdClose, MdOutlineNotificationsNone } from "react-icons/md";
+import { BsPersonExclamation, BsTrash, BsFillInfoSquareFill  } from "react-icons/bs";
+import { ImHome2 } from "react-icons/im";
+import { HiShoppingBag } from "react-icons/hi2";
+import { FaSquarePhoneFlip } from "react-icons/fa6";
 
 // style
 import "./style.scss";
 
 // global state
 import useCart from "core/state/useCart";
+import BurgerMenu from "presentation/component/atom/BurgerMenu";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -90,26 +94,33 @@ const Header = () => {
             <h2 className="header__title">Furniro</h2>
           </div>
 
+          {/* burger-menu */}      
+          <BurgerMenu/>
+
           {/* header menu */}
           <div className={`header__menu ${open ? "active" : "inactive"}`}>
             <ul className="header__menu__list">
               <li className="header__menu__item">
                 <Link className="header__menu__link" to="/">
+                  <span><ImHome2/></span>
                   Home
                 </Link>
               </li>
               <li className="header__menu__item">
                 <Link className="header__menu__link" to="/shop">
+                  <span><HiShoppingBag/></span>
                   Shop
                 </Link>
               </li>
               <li className="header__menu__item">
                 <Link className="header__menu__link" to="/about">
+                  <span><BsFillInfoSquareFill /></span>
                   About
                 </Link>
               </li>
               <li className="header__menu__item">
                 <Link className="header__menu__link" to="/contact">
+                  <span><FaSquarePhoneFlip /></span>
                   Contact
                 </Link>
               </li>
@@ -120,7 +131,7 @@ const Header = () => {
           <div className={`header__nav ${open ? "active" : "inactive"}`}>
             <ul className="header__nav__list">
               <li className="header__nav__item">
-                <Link to="/my-account" type="link" className="btn btn--icons nav-link">
+                <Link to="/my-account" type="link" className="btn btn--icons btn-nav">
                   <BsPersonExclamation />
                 </Link>
               </li>
@@ -137,14 +148,14 @@ const Header = () => {
               </li>
               <li className="header__nav__item">
                 <Button type="button" variant="icons btn-nav" className="header__nav__link" to="/">
-                  <AiOutlineHeart />
-                  <span>{listCart?.length > 0 ? listCart?.length : 0}</span>
+                <MdOutlineNotificationsNone />
+                  {listCart?.length > 0 ? <span>{listCart?.length > 0 ? listCart?.length : 0}</span> : ""}
                 </Button>
               </li>
               <li className="header__nav__item">
-                <Link type="link" to="/detail-product" className="btn btn--icons nav-link" onMouseEnter={() => setOpenChart("1")}>
+                <Link type="link" to="/detail-product" className="btn btn--icons btn-nav" onMouseEnter={() => setOpenChart("1")}>
                   <AiOutlineShoppingCart />
-                  <span>{listCart?.length > 0 ? listCart?.length : 0}</span>
+                  {listCart?.length > 0 ? <span>{listCart?.length > 0 ? listCart?.length : 0}</span> : ""}
                 </Link>
               </li>
             </ul>
@@ -237,7 +248,7 @@ const Header = () => {
             <Link type="link" className="cart-action" to="/cart">
               Cart
             </Link>
-            <Link type="link" className="cart-action" to="/chekout">
+            <Link type="link" className="cart-action" to="/checkout">
               Checkout
             </Link>
             <Link type="link" className="cart-action" to="/comparison">
